@@ -1,0 +1,30 @@
+
+.example-full-width {
+  width: 100%;
+}
+
+.full-button {
+  width: 33%;
+  top: 0;
+  left: 33%;
+  right: 33%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-form {
+  background: -webkit-linear-gradient( right, rgb(112, 112, 223) , rgb(18, 18, 163));
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

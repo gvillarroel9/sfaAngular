@@ -1,0 +1,35 @@
+<div class="center-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title><h2>Iniciar sesión</h2></mat-card-title>
+      <mat-card-subtitle><h5>Bienvenidos a Administracion de Ventas</h5></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form (submit)="loginUser($event)" >
+        <mat-form-field class="example-full-width">
+          <mat-icon matSuffix>person</mat-icon>
+          <input matInput placeholder="Usuario o Correo" [formControl]="emailFormControl" id="username" >
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Introduzca una dirección de correo válida
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+          Correo es <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ingrese su contraseña" [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl" id="password" >
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Contraseña es <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-checkbox>Recuerdame</mat-checkbox>
+        <br><br>
+        <button (onclick)="this.submit();" class= "full-button" mat-raised-button color="primary" >INICIAR</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>

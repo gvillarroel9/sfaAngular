@@ -1,0 +1,58 @@
+.example-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(to right, blue , navy);
+}
+.example-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.example-sidenav-content {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.mat-expansion-panel-header{
+  padding: 0px 16px 0px 16px;
+}
+
+mat-expansion-panel mat-icon{
+  padding: 4px 4px;
+}
+mat-expansion-panel mat-expansion-panel-header h5{
+  padding: 10px 10px 10px 5px;
+  margin: 0px 0px 0px 0px;
+}
+
+mat-expansion-panel mat-list-item h5 {
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.mat-expansion-panel-body {
+  padding: 0px 0px 0px 0px;
+}
+
+mat-nav-list mat-list-item h5 {
+  padding: 0px 5px;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}

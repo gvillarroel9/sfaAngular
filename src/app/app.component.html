@@ -1,0 +1,48 @@
+<div *ngIf="getLogueado()">
+  <mat-sidenav-container class="example-container" >
+    <mat-sidenav  #sidenav mode="side" opened="true">
+      <mat-toolbar> Administracion de Ventas</mat-toolbar>
+      <div *ngFor="let item of menuItems">
+        <mat-expansion-panel *ngIf="item.subMenu.length != 0">
+            <mat-expansion-panel-header>
+              <mat-icon>{{item.icon}}</mat-icon>
+              <h5>{{item.nombre}}</h5>
+            </mat-expansion-panel-header>
+              <mat-nav-list >
+                <mat-list-item *ngFor="let sub of item.subMenu">
+                  <h5>{{sub}}</h5>
+                </mat-list-item>
+              </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-nav-list *ngIf="item.subMenu.length == 0">
+            <mat-list-item>
+              <mat-icon>{{item.icon}}</mat-icon>
+              <h5>{{item.nombre}}</h5>
+            </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content >
+        <mat-toolbar color="primary" class="example-toolbar">
+          <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+          <h1>Menu App</h1>
+          <span class="example-fill-remaining-space"></span>
+          <span><mat-icon  [matMenuTriggerFor]="menu">person</mat-icon> </span>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+<div *ngIf="!getLogueado()">
+  <app-login></app-login>
+</div>
+
+
+
+
